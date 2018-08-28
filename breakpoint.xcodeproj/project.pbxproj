@@ -15,6 +15,7 @@
 		90212F6D2134E88000C665F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90212F6C2134E88000C665F1 /* Assets.xcassets */; };
 		90212F702134E88000C665F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90212F6E2134E88000C665F1 /* LaunchScreen.storyboard */; };
 		90212F7D2134EB0800C665F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90212F7C2134EB0800C665F1 /* GoogleService-Info.plist */; };
+		90212F7F2134ECCC00C665F1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F7E2134ECCC00C665F1 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		90212F6F2134E88000C665F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90212F712134E88000C665F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90212F7C2134EB0800C665F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		90212F7E2134ECCC00C665F1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		90212F7B2134E95800C665F1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				90212F7E2134ECCC00C665F1 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				90212F682134E87E00C665F1 /* SecondViewController.swift in Sources */,
 				90212F642134E87E00C665F1 /* AppDelegate.swift in Sources */,
 				90212F662134E87E00C665F1 /* FirstViewController.swift in Sources */,
+				90212F7F2134ECCC00C665F1 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +407,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -419,7 +426,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
