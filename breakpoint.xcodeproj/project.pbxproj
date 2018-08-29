@@ -16,6 +16,10 @@
 		90212F702134E88000C665F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90212F6E2134E88000C665F1 /* LaunchScreen.storyboard */; };
 		90212F7D2134EB0800C665F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90212F7C2134EB0800C665F1 /* GoogleService-Info.plist */; };
 		90212F7F2134ECCC00C665F1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F7E2134ECCC00C665F1 /* DataService.swift */; };
+		90212F8121362DFE00C665F1 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F8021362DFE00C665F1 /* AuthVC.swift */; };
+		90212F8321362E5B00C665F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F8221362E5B00C665F1 /* LoginVC.swift */; };
+		90212F8521362EAC00C665F1 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F8421362EAC00C665F1 /* InsetTextField.swift */; };
+		90212F872136317100C665F1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F862136317100C665F1 /* ShadowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		90212F712134E88000C665F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90212F7C2134EB0800C665F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90212F7E2134ECCC00C665F1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		90212F8021362DFE00C665F1 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		90212F8221362E5B00C665F1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		90212F8421362EAC00C665F1 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
+		90212F862136317100C665F1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,8 @@
 			children = (
 				90212F652134E87E00C665F1 /* FirstViewController.swift */,
 				90212F672134E87E00C665F1 /* SecondViewController.swift */,
+				90212F8021362DFE00C665F1 /* AuthVC.swift */,
+				90212F8221362E5B00C665F1 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -94,6 +104,8 @@
 		90212F782134E91400C665F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				90212F8421362EAC00C665F1 /* InsetTextField.swift */,
+				90212F862136317100C665F1 /* ShadowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,7 +270,11 @@
 			files = (
 				90212F682134E87E00C665F1 /* SecondViewController.swift in Sources */,
 				90212F642134E87E00C665F1 /* AppDelegate.swift in Sources */,
+				90212F8321362E5B00C665F1 /* LoginVC.swift in Sources */,
+				90212F8121362DFE00C665F1 /* AuthVC.swift in Sources */,
+				90212F872136317100C665F1 /* ShadowView.swift in Sources */,
 				90212F662134E87E00C665F1 /* FirstViewController.swift in Sources */,
+				90212F8521362EAC00C665F1 /* InsetTextField.swift in Sources */,
 				90212F7F2134ECCC00C665F1 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
