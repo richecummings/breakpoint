@@ -133,7 +133,7 @@
                                     <constraint firstItem="hlM-XX-9zW" firstAttribute="centerY" secondItem="uU6-5a-RXW" secondAttribute="centerY" id="yDt-a5-vVX"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-OE-jum">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-OE-jum">
                                 <rect key="frame" x="16" y="90" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="R3a-GU-VhL"/>
