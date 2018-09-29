@@ -28,6 +28,7 @@
 		90212F89213632A200C665F1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F88213632A200C665F1 /* AuthService.swift */; };
 		906D199E215F258A00332E0C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D199D215F258A00332E0C /* UserCell.swift */; };
 		906D19A021600DB700332E0C /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D199F21600DB700332E0C /* GroupCell.swift */; };
+		906D19A22160106000332E0C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A12160106000332E0C /* Group.swift */; };
 		909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		90212F88213632A200C665F1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		906D199D215F258A00332E0C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		906D199F21600DB700332E0C /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		906D19A12160106000332E0C /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				900A0513215878AA00C7829A /* Message.swift */,
+				906D19A12160106000332E0C /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				90212F8321362E5B00C665F1 /* LoginVC.swift in Sources */,
 				90212F89213632A200C665F1 /* AuthService.swift in Sources */,
 				909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */,
+				906D19A22160106000332E0C /* Group.swift in Sources */,
 				906D199E215F258A00332E0C /* UserCell.swift in Sources */,
 				90212F8121362DFE00C665F1 /* AuthVC.swift in Sources */,
 				90212F872136317100C665F1 /* ShadowView.swift in Sources */,
