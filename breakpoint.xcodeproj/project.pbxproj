@@ -26,6 +26,7 @@
 		90212F8521362EAC00C665F1 /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F8421362EAC00C665F1 /* InsetTextField.swift */; };
 		90212F872136317100C665F1 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F862136317100C665F1 /* ShadowView.swift */; };
 		90212F89213632A200C665F1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90212F88213632A200C665F1 /* AuthService.swift */; };
+		906D199E215F258A00332E0C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D199D215F258A00332E0C /* UserCell.swift */; };
 		909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		90212F8421362EAC00C665F1 /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
 		90212F862136317100C665F1 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		90212F88213632A200C665F1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		906D199D215F258A00332E0C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				90212F8421362EAC00C665F1 /* InsetTextField.swift */,
 				90212F862136317100C665F1 /* ShadowView.swift */,
 				900A0511215876E900C7829A /* FeedCell.swift */,
+				906D199D215F258A00332E0C /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				90212F8321362E5B00C665F1 /* LoginVC.swift in Sources */,
 				90212F89213632A200C665F1 /* AuthService.swift in Sources */,
 				909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */,
+				906D199E215F258A00332E0C /* UserCell.swift in Sources */,
 				90212F8121362DFE00C665F1 /* AuthVC.swift in Sources */,
 				90212F872136317100C665F1 /* ShadowView.swift in Sources */,
 				900A050E2158645000C7829A /* CreatePostVC.swift in Sources */,
