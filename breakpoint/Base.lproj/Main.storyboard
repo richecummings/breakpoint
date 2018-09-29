@@ -237,7 +237,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailLbl" destination="hWI-GP-Iij" id="RVa-fM-b73"/>
+                        <outlet property="emailLbl" destination="neR-Cc-AHc" id="hJ9-n4-3vN"/>
                         <outlet property="profileImage" destination="P4n-OE-jum" id="KVM-GI-GKk"/>
                         <outlet property="sendBtn" destination="sI1-Nf-Yyb" id="zHF-PC-Mfz"/>
                         <outlet property="textView" destination="foT-hS-drM" id="oz1-RO-9aE"/>
