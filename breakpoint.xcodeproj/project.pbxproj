@@ -32,6 +32,7 @@
 		906D19A421601A8500332E0C /* GroupFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A321601A8500332E0C /* GroupFeedCell.swift */; };
 		906D19A621601AE100332E0C /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A521601AE100332E0C /* GroupFeedVC.swift */; };
 		906D19A821615EBD00332E0C /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A721615EBD00332E0C /* UIViewControllerExt.swift */; };
+		906D19AA2161680D00332E0C /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A92161680D00332E0C /* StorageService.swift */; };
 		909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		906D19A321601A8500332E0C /* GroupFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedCell.swift; sourceTree = "<group>"; };
 		906D19A521601AE100332E0C /* GroupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
 		906D19A721615EBD00332E0C /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		906D19A92161680D00332E0C /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 			children = (
 				90212F7E2134ECCC00C665F1 /* DataService.swift */,
 				90212F88213632A200C665F1 /* AuthService.swift */,
+				906D19A92161680D00332E0C /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-breakpoint/Pods-breakpoint-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -274,6 +278,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -316,6 +321,7 @@
 				90212F642134E87E00C665F1 /* AppDelegate.swift in Sources */,
 				906D19A621601AE100332E0C /* GroupFeedVC.swift in Sources */,
 				906D19A421601A8500332E0C /* GroupFeedCell.swift in Sources */,
+				906D19AA2161680D00332E0C /* StorageService.swift in Sources */,
 				90212F8321362E5B00C665F1 /* LoginVC.swift in Sources */,
 				90212F89213632A200C665F1 /* AuthService.swift in Sources */,
 				909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */,
@@ -475,10 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -494,10 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

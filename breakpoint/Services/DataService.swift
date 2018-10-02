@@ -18,6 +18,7 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_GROUPS = DB_BASE.child("groups")
     private var _REF_FEED = DB_BASE.child("feed")
+    private var _REF_PROFILE_IMAGES = DB_BASE.child("profileImages")
     
     var REF_BASE: DatabaseReference {
         return _REF_BASE
@@ -33,6 +34,10 @@ class DataService {
     
     var REF_FEED: DatabaseReference {
         return _REF_FEED
+    }
+    
+    var REF_PROFILE_IMAGES: DatabaseReference {
+        return _REF_PROFILE_IMAGES
     }
     
     func createDBUser(uid: String, userData: Dictionary<String, Any>) {
@@ -107,6 +112,19 @@ class DataService {
         }
     }
     
+    func getId(forUser username: String, handler: @escaping (_ uid: String) -> ()) {
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for user in userSnapshot {
+                let email = user.childSnapshot(forPath: "email").value as! String
+                
+                if email == username {
+                    handler(user.key)
+                }
+            }
+        }
+    }
+    
     func getIds(forUsernames usernames: [String], handler: @escaping (_ uidArray: [String]) -> ()) {
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             var idArray = [String]()
@@ -160,5 +178,25 @@ class DataService {
             
             handler(groupsArray)
         }
+    }
+    
+    func setProfileImageName(forUID uid: String, imageName: String, handler: @escaping (_ profileImageNameSet: Bool) -> ()) {
+        REF_PROFILE_IMAGES.child(uid).updateChildValues(["profileImage": imageName])
+        handler(true)
+    }
+    
+    func getProfileImageName(forUID uid: String, handler: @escaping (_ profileImageName: String) -> ()) {
+        
+        REF_PROFILE_IMAGES.observeSingleEvent(of: .value) { (profileImageSnapshot) in
+            guard let profileImageSnapshot = profileImageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for snapshot in profileImageSnapshot {
+                if snapshot.key == uid {
+                    let imageName = snapshot.childSnapshot(forPath: "profileImage").value as! String
+                    handler(imageName)
+                }
+            }
+        }
+        
+        handler("defaultProfileImage")
     }
 }

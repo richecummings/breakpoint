@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserCell: UITableViewCell {
 
@@ -16,14 +17,20 @@ class UserCell: UITableViewCell {
     
     var showing = false
     
-    func configureCell(profileImage image: UIImage, email: String, isSelected: Bool) {
-        self.profileImage.image = image
+//    func configureCell(profileImage image: UIImage, email: String, isSelected: Bool) {
+//        self.profileImage.image = image
+//        self.emailLbl.text = email
+//        if isSelected {
+//            self.checkImage.isHidden = false
+//        } else {
+//            self.checkImage.isHidden = true
+//        }
+//    }
+    
+    func configureCell(profileImageReference: StorageReference, email: String, isSelected: Bool) {
+        self.profileImage.sd_setImage(with: profileImageReference, placeholderImage: UIImage(named: "defaultProfileImage")!)
         self.emailLbl.text = email
-        if isSelected {
-            self.checkImage.isHidden = false
-        } else {
-            self.checkImage.isHidden = true
-        }
+        self.checkImage.isHidden = isSelected
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

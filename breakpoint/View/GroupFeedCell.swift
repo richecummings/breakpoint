@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupFeedCell: UITableViewCell {
 
@@ -14,10 +15,9 @@ class GroupFeedCell: UITableViewCell {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var contentLbl: UILabel!
     
-    func configureCell(profileImage: UIImage, email: String, content: String) {
-        self.profileImage.image = profileImage
+    func configureCell(profileImageReference: StorageReference, email: String, content: String) {
+        self.profileImage.sd_setImage(with: profileImageReference, placeholderImage: UIImage(named: "defaultProfileImage")!)
         self.emailLbl.text = email
         self.contentLbl.text = content
     }
-    
 }
