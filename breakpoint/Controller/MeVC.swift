@@ -15,8 +15,11 @@ class MeVC: UIViewController {
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var contentView: UIView!
     
+    var screenSize = UIScreen.main.bounds
     var imagePicker = UIImagePickerController()
+    var spinner: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,7 @@ class MeVC: UIViewController {
                 self.profileImageView.sd_setImage(with: imageReference, placeholderImage: placeholderImage)
             })
         }
+        self.profileImageView.setRounded()
     }
     
     @IBAction func signOutBtnWasPressed(_ sender: Any) {
@@ -60,6 +64,22 @@ class MeVC: UIViewController {
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    func addSpinner() {
+        spinner = UIActivityIndicatorView()
+        spinner?.center = CGPoint(x: (screenSize.width / 2) - ((spinner?.frame.width)! / 2), y: 150)
+        spinner?.activityIndicatorViewStyle = .whiteLarge
+        spinner?.color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        spinner?.startAnimating()
+        //profileImageView.addSubview(spinner!)
+        contentView.addSubview(spinner!)
+    }
+    
+    func removeSpinner() {
+        if spinner != nil {
+            spinner?.removeFromSuperview()
+        }
+    }
 }
 
 extension MeVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -69,12 +89,18 @@ extension MeVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate 
         let chosenImageName = chosenImageUrl.lastPathComponent
         let uid = Auth.auth().currentUser?.uid
         
-        StorageService.instance.uploadProfileImage(forUID: uid!, imageUrl: chosenImageUrl)
-        DataService.instance.setProfileImageName(forUID: uid!, imageName: chosenImageName) { (success) in
-            if success {
-                self.profileImageView.image = chosenImage
-            }
+        StorageService.instance.getUploadTask(forImageURL: chosenImageUrl, uid: uid!) { (uploadTask) in
+            self.addSpinner()
+            uploadTask.observe(.success, handler: { (snapshot) in
+                DataService.instance.setProfileImageName(forUID: uid!, imageName: chosenImageName) { (success) in
+                    if success {
+                        self.profileImageView.image = chosenImage
+                        self.removeSpinner()
+                    }
+                }
+            })
         }
+        
         
         dismiss(animated: true, completion: nil)
     }

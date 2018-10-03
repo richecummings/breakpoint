@@ -34,6 +34,8 @@
 		906D19A821615EBD00332E0C /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A721615EBD00332E0C /* UIViewControllerExt.swift */; };
 		906D19AA2161680D00332E0C /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D19A92161680D00332E0C /* StorageService.swift */; };
 		909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */; };
+		90C5E3F421643262008E2C15 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5E3F321643262008E2C15 /* RoundedImage.swift */; };
+		90C5E3F62164345D008E2C15 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5E3F52164345D008E2C15 /* UIImageViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		906D19A721615EBD00332E0C /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		906D19A92161680D00332E0C /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
+		90C5E3F321643262008E2C15 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		90C5E3F52164345D008E2C15 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				906D199D215F258A00332E0C /* UserCell.swift */,
 				906D199F21600DB700332E0C /* GroupCell.swift */,
 				906D19A321601A8500332E0C /* GroupFeedCell.swift */,
+				90C5E3F321643262008E2C15 /* RoundedImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			children = (
 				900A050F21586CB500C7829A /* UIViewExt.swift */,
 				906D19A721615EBD00332E0C /* UIViewControllerExt.swift */,
+				90C5E3F52164345D008E2C15 /* UIImageViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				900A0512215876E900C7829A /* FeedCell.swift in Sources */,
 				900A050C21584D9800C7829A /* MeVC.swift in Sources */,
 				906D19A021600DB700332E0C /* GroupCell.swift in Sources */,
+				90C5E3F62164345D008E2C15 /* UIImageViewExt.swift in Sources */,
 				90212F682134E87E00C665F1 /* GroupsVC.swift in Sources */,
 				906D19A821615EBD00332E0C /* UIViewControllerExt.swift in Sources */,
 				90212F642134E87E00C665F1 /* AppDelegate.swift in Sources */,
@@ -327,6 +334,7 @@
 				909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */,
 				906D19A22160106000332E0C /* Group.swift in Sources */,
 				906D199E215F258A00332E0C /* UserCell.swift in Sources */,
+				90C5E3F421643262008E2C15 /* RoundedImage.swift in Sources */,
 				90212F8121362DFE00C665F1 /* AuthVC.swift in Sources */,
 				90212F872136317100C665F1 /* ShadowView.swift in Sources */,
 				900A050E2158645000C7829A /* CreatePostVC.swift in Sources */,
@@ -481,7 +489,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -497,7 +508,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2CMDWTBYBU;
 				INFOPLIST_FILE = breakpoint/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.specs.breakpoint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

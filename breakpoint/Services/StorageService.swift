@@ -36,7 +36,16 @@ class StorageService {
         let imageName = imageUrl.lastPathComponent
         metadata.contentType = "image/jpeg"
 
+        _ = REF_PROFILE_IMAGES.child(uid).child(imageName).putFile(from: imageUrl, metadata: metadata)
+    }
+    
+    func getUploadTask(forImageURL imageUrl: URL, uid: String, handler: @escaping (_ uploadTask: StorageUploadTask) -> ()) {
+        let metadata = StorageMetadata()
+        let imageName = imageUrl.lastPathComponent
+        metadata.contentType = "image/jpeg"
+        
         let uploadTask = REF_PROFILE_IMAGES.child(uid).child(imageName).putFile(from: imageUrl, metadata: metadata)
+        handler(uploadTask)
     }
     
     func downloadProfileImage(forUID uid: String, handler: @escaping (_ image: UIImage) -> ()){

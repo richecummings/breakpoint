@@ -17,6 +17,7 @@ class FeedCell: UITableViewCell {
     
     func configureCell(profileImageReference: StorageReference, email: String, content: String) {
         self.profileImage.sd_setImage(with: profileImageReference, placeholderImage: UIImage(named: "defaultProfileImage")!)
+        self.profileImage.setRounded()
         self.emailLbl.text = email
         self.contentLbl.text = content
     }

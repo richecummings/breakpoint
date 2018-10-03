@@ -29,6 +29,7 @@ class UserCell: UITableViewCell {
     
     func configureCell(profileImageReference: StorageReference, email: String, isSelected: Bool) {
         self.profileImage.sd_setImage(with: profileImageReference, placeholderImage: UIImage(named: "defaultProfileImage")!)
+        self.profileImage.setRounded()
         self.emailLbl.text = email
         self.checkImage.isHidden = isSelected
     }

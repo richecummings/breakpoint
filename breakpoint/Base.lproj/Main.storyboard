@@ -367,6 +367,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="me-tabIcon" selectedImage="me-tabIcon" id="Ivk-ER-TFC"/>
                     <connections>
+                        <outlet property="contentView" destination="MAJ-vY-GBs" id="XH5-xl-LtI"/>
                         <outlet property="emailLbl" destination="UlI-ch-015" id="pB8-GA-xec"/>
                         <outlet property="profileImageBtn" destination="vVe-fy-az4" id="AdQ-7o-7SP"/>
                         <outlet property="profileImageView" destination="aij-pb-7IG" id="w5T-Oz-Mbs"/>
@@ -376,24 +377,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pv5-bL-BFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="-0.44977511244377816"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2uU-Zx-G2W">
-            <objects>
-                <viewController id="bnW-rs-2aS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kQE-3q-Ain"/>
-                        <viewControllerLayoutGuide type="bottom" id="TJI-os-uFP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Se4-h8-W5S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="efd-oi-Kes" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2247" y="0.0"/>
         </scene>
         <!--Groups-->
         <scene sceneID="wg7-f3-ORb">

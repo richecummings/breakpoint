@@ -33,6 +33,8 @@ class CreatePostVC: UIViewController {
                 self.profileImage.sd_setImage(with: imageReference, placeholderImage: placeholderImage)
             })
         }
+        
+        self.profileImage.setRounded()
     }
     
     @IBAction func sendBtnWasPressed(_ sender: Any) {
