@@ -65,6 +65,25 @@ class DataService {
         }
     }
     
+    func getFeedMessages(forUID uid: String, handler: @escaping (_ messages: [Message]) -> ()) {
+        var messageArray = [Message]()
+        REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
+            guard let feedMessageSnapshot = feedMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for message in feedMessageSnapshot {
+                let senderId = message.childSnapshot(forPath: "senderId").value as! String
+                
+                if senderId == uid {
+                    let content = message.childSnapshot(forPath: "content").value as! String
+                    let message = Message(content: content, senderId: senderId)
+                    messageArray.append(message)
+                }
+            }
+            
+            handler(messageArray)
+        }
+    }
+    
     func getAllFeedMessages(handler: @escaping(_ messages: [Message]) -> ()) {
         var messageArray = [Message]()
         REF_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
@@ -91,6 +110,46 @@ class DataService {
                 let message = Message(content: content, senderId: senderId)
                 groupMessageArray.append(message)
             }
+            
+            handler(groupMessageArray)
+        }
+    }
+    
+    func getGroupMessages(forUID uid: String, handler: @escaping (_ messageArray: [Message]) -> ()) {
+        var groupMessageArray = [Message]()
+        REF_GROUPS.observeSingleEvent(of: .value) { (groupSnapshot) in
+            guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for group in groupSnapshot {
+                guard let members = group.childSnapshot(forPath: "members").children.allObjects as? [DataSnapshot] else { return }
+                
+                for member in members {
+                    let memberId = member.value as! String
+                    
+                    if memberId == uid {
+                        guard let messages = group.childSnapshot(forPath: "messages").children.allObjects as? [DataSnapshot] else { return }
+                        
+                        for message in messages {
+                            let senderId = message.childSnapshot(forPath: "senderId").value as! String
+                            
+                            if senderId == uid {
+                                let content = message.childSnapshot(forPath: "content").value as! String
+                                let message = Message(content: content, senderId: senderId)
+                                groupMessageArray.append(message)
+                            }
+                        }
+                    }
+                }
+            }
+//            guard let groupSnapshot = groupSnapshot.children.allObjects as? [DataSnapshot] else { return }
+//            for group in groupSnapshot {
+//                let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
+//
+//                if senderId == uid {
+//                    let content = groupMessage.childSnapshot(forPath: "content").value as! String
+//                    let message = Message(content: content, senderId: senderId)
+//                    groupMessageArray.append(message)
+//                }
+//            }
             
             handler(groupMessageArray)
         }

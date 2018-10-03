@@ -17,12 +17,15 @@ class MeVC: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var contentView: UIView!
     
+    var messageArray = [Message]()
     var screenSize = UIScreen.main.bounds
     var imagePicker = UIImagePickerController()
     var spinner: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +40,18 @@ class MeVC: UIViewController {
             })
         }
         self.profileImageView.setRounded()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let uid = (Auth.auth().currentUser?.uid)!
+        DataService.instance.getFeedMessages(forUID: uid, handler: { (returnedMessageArray) in
+            self.messageArray = returnedMessageArray.reversed()
+            DataService.instance.getGroupMessages(forUID: uid, handler: { (returnedGroupMessageArray) in
+                self.messageArray.append(contentsOf: returnedGroupMessageArray.reversed())
+                self.tableView.reloadData()
+            })
+        })
     }
     
     @IBAction func signOutBtnWasPressed(_ sender: Any) {
@@ -107,5 +122,29 @@ extension MeVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate 
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MeVC: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messageArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "meCell") as? MeCell else { return UITableViewCell() }
+        let message = messageArray[indexPath.row]
+        let username = Auth.auth().currentUser?.email
+        
+        DataService.instance.getProfileImageName(forUID: message.senderId) { (returnedImageName) in
+            StorageService.instance.downloadProfileImage(forUID: message.senderId, imageName: returnedImageName, handler: { (imageReference) in
+                cell.configureCell(profileImageReference: imageReference, email: username!, content: message.content)
+            })
+        }
+        
+        return cell
     }
 }

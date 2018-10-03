@@ -36,6 +36,7 @@
 		909C6C6C215F03390022E5F8 /* CreateGroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */; };
 		90C5E3F421643262008E2C15 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5E3F321643262008E2C15 /* RoundedImage.swift */; };
 		90C5E3F62164345D008E2C15 /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5E3F52164345D008E2C15 /* UIImageViewExt.swift */; };
+		90C5E3F8216569EC008E2C15 /* MeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C5E3F7216569EC008E2C15 /* MeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		909C6C6B215F03390022E5F8 /* CreateGroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupsVC.swift; sourceTree = "<group>"; };
 		90C5E3F321643262008E2C15 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		90C5E3F52164345D008E2C15 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		90C5E3F7216569EC008E2C15 /* MeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				906D199F21600DB700332E0C /* GroupCell.swift */,
 				906D19A321601A8500332E0C /* GroupFeedCell.swift */,
 				90C5E3F321643262008E2C15 /* RoundedImage.swift */,
+				90C5E3F7216569EC008E2C15 /* MeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				90212F662134E87E00C665F1 /* FeedVC.swift in Sources */,
 				90212F8521362EAC00C665F1 /* InsetTextField.swift in Sources */,
 				90212F7F2134ECCC00C665F1 /* DataService.swift in Sources */,
+				90C5E3F8216569EC008E2C15 /* MeCell.swift in Sources */,
 				900A0514215878AA00C7829A /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
